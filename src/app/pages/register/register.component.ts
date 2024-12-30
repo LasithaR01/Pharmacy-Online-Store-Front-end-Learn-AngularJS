@@ -40,14 +40,14 @@ export class RegisterComponent {
         [Validators.required, Validators.pattern(/^[A-Z][a-z0-9]{6,20}$/)],
       ],
       rePassword: ['', [Validators.required]],
-      phone: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/^01[0125][0-9]{8}$/),
-          validNumber,
-        ],
-      ],
+      // phone: [
+      //   '',
+      //   [
+      //     Validators.required,
+      //     Validators.pattern(/^01[0125][0-9]{8}$/),
+      //     validNumber,
+      //   ],
+      // ],
     },
     { validators: [confirmPassword('password', 'rePassword')] }
   );

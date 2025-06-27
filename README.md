@@ -40,3 +40,7 @@ Feel free to explore the codebase to understand the implementation details and c
  - [Angular Material](https://material.angular.io/) 
  - [NgxPaginationModule](https://www.npmjs.com/package/ngx-pagination)
  - [NotifierModule](https://www.npmjs.com/package/angular-notifier)
+
+ ## Installation
+ - npm install
+ - ng serve

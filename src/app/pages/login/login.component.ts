@@ -49,35 +49,41 @@ export class LoginComponent implements OnInit {
   signIn(loginForm: FormGroup) {
     if (loginForm.valid && !this.isLoding) {
       this.isLoding = true;
-      this._authService.signIn(loginForm.value).subscribe({
-        next: (respons) => {
-          if (respons.user.name === 'admin') {
-            this._router.navigate(['/dashboard']);
-            this.notifierService.notify(
-              'warning',
-              `${respons.message} Log In as admin ☠️ `
-            );
-          } else {
-            setTimeout(() => {
-              this._router.navigate(['/home']);
-            }, 100);
-            this.notifierService.notify(
-              'success',
-              `${respons.message} Log In as user 👨‍💼`
-            );
-          }
-          this.isLoding = false;
-          if (respons.message === 'success') {
-            localStorage.setItem('token', respons.token);
-            localStorage.setItem('username', respons.user.name);
-            loginForm.reset();
-          }
-        },
-        error: (er) => {
-          this.isLoding = false;
-          this.notifierService.notify('error', `${er.error.message} ❌`);
-        },
-      });
+      this._router.navigate(['/dashboard']);
+      // localStorage.setItem('token', 'token12132434353444');
+      // localStorage.setItem('username', 'admin');
+      // loginForm.reset();
+
+      // this._authService.signIn(loginForm.value).subscribe({
+      //   next: (respons) => {
+      //     console.log('respons: ', respons)
+      //     if (respons.user.name === 'admin') {
+      //       this._router.navigate(['/dashboard']);
+      //       this.notifierService.notify(
+      //         'warning',
+      //         `${respons.message} Log In as admin ☠️ `
+      //       );
+      //     } else {
+      //       setTimeout(() => {
+      //         this._router.navigate(['/home']);
+      //       }, 100);
+      //       this.notifierService.notify(
+      //         'success',
+      //         `${respons.message} Log In as user 👨‍💼`
+      //       );
+      //     }
+      //     this.isLoding = false;
+      //     if (respons.message === 'success') {
+      //       localStorage.setItem('token', respons.token);
+      //       localStorage.setItem('username', respons.user.name);
+      //       loginForm.reset();
+      //     }
+      //   },
+      //   error: (er) => {
+      //     this.isLoding = false;
+      //     this.notifierService.notify('error', `${er.error.message} ❌`);
+      //   },
+      // });
     } else {
       loginForm.markAllAsTouched();
     }

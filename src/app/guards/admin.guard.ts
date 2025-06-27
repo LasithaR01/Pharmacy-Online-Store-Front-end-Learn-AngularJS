@@ -4,6 +4,7 @@ import { NotifierService } from 'angular-notifier';
 
 export const adminGuard: CanActivateFn = (next: any) => {
   const router = inject(Router);
+  console.log('next.data.role: ', next.data.role)
   const notifierService = inject(NotifierService);
   if (localStorage.getItem('username') === next.data.role) {
     return true;

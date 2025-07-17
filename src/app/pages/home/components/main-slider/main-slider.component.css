@@ -1,0 +1,89 @@
+/* Health Slider Section */
+.health-slider-section {
+  position: relative;
+}
+
+.health-banner-carousel .owl-carousel {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Prescription Banner */
+.prescription-banner {
+  background: linear-gradient(135deg, #28A745 0%, #218838 100%);
+  border-radius: 16px;
+  height: 400px;
+}
+
+.banner-content {
+  max-width: 80%;
+}
+
+.banner-content h2 {
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.banner-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.btn-light {
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Side Cards */
+.health-side-card {
+  height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.health-side-card:hover {
+  transform: translateY(-5px);
+}
+
+.side-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Carousel Indicators */
+::ng-deep .owl-theme .owl-dots .owl-dot span {
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+::ng-deep .owl-theme .owl-dots .owl-dot.active span {
+  background: white;
+  transform: scale(1.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .prescription-banner {
+    height: 350px;
+    padding: 2rem !important;
+  }
+
+  .banner-content {
+    max-width: 100%;
+  }
+
+  .banner-content h2 {
+    font-size: 2rem;
+  }
+}

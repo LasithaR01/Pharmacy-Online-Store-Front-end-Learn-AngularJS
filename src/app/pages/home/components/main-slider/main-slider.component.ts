@@ -16,16 +16,44 @@ export class MainSliderComponent {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
-    pullDrag: true,
-    dots: false,
-    navSpeed: 600,
-    navText: ['&#8249', '&#8250;'],
+    pullDrag: false,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: true,
+    navSpeed: 700,
+    navText: [
+      '<i class="fas fa-chevron-left"></i>',
+      '<i class="fas fa-chevron-right"></i>'
+    ],
     responsive: {
       0: {
         items: 1,
+        nav: false,
+        dots: true
       },
+      768: {
+        items: 1,
+        nav: false,
+        dots: true
+      },
+      992: {
+        items: 1,
+        nav: true,
+        dots: true
+      }
     },
-
     nav: true,
+    animateIn: 'fadeIn',
+    animateOut: 'fadeOut',
+    smartSpeed: 1000
   };
+
+  // Optional: Track current slide for custom indicators
+  activeSlides: any;
+
+  // Optional: Get current slide data
+  getPassedData(data: any) {
+    this.activeSlides = data;
+  }
 }

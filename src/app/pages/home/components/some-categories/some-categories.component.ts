@@ -13,6 +13,7 @@ import { categoriesSlide } from 'src/app/shared/animations/toggle-fade';
 export class SomeCategoriesComponent implements OnInit {
   constructor(private _productsDataService: ProductsDataService) {}
   allcategories: Categoreis[] = [];
+  allcategories_v2: Categoreis[] = [];
 
   customOptions: OwlOptions = {
     loop: true,
@@ -42,12 +43,24 @@ export class SomeCategoriesComponent implements OnInit {
   };
   ngOnInit(): void {
     this.displayCategories();
+    this.displayCategories_v2();
+    console.log('allcategories_v2: ', this.allcategories_v2)
   }
 
   displayCategories() {
     this._productsDataService.allCategories().subscribe({
       next: (respons) => {
+        console.log('categories: ', respons.data);
         this.allcategories = respons.data;
+      },
+    });
+  }
+
+  displayCategories_v2() {
+    this._productsDataService.allCategories_v2().subscribe({
+      next: (respons) => {
+        console.log('allcategories_v2: ', respons);
+        this.allcategories_v2 = respons;
       },
     });
   }

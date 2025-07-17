@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, catchError } from 'rxjs';
-import { baseUrl } from '../shared/paseApi';
+import { baseUrl, restApiUrl } from '../shared/paseApi';
 import { HandelErorrService } from './handel-erorr.service';
 
 @Injectable({
@@ -19,6 +19,13 @@ export class ProductsDataService {
       })
       .pipe(catchError(this._handelErorrService.logErorr));
   }
+  allProducts_v2(numOfPadge: number = 1): Observable<any> {
+        return this._httpClient
+      .get(`${restApiUrl}/products`, {
+        params: { page: numOfPadge },
+      })
+      .pipe(catchError(this._handelErorrService.logErorr));
+  }
 
   lengthProducts: BehaviorSubject<number> = new BehaviorSubject(0);
 
@@ -30,6 +37,11 @@ export class ProductsDataService {
   allCategories(): Observable<any> {
     return this._httpClient
       .get(`${baseUrl}/api/v1/categories`)
+      .pipe(catchError(this._handelErorrService.logErorr));
+  }
+  allCategories_v2(): Observable<any> {
+    return this._httpClient
+      .get(`${restApiUrl}/categories`)
       .pipe(catchError(this._handelErorrService.logErorr));
   }
   specificCategories(id: string | null): Observable<any> {

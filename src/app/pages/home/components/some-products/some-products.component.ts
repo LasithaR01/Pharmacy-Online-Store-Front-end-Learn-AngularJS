@@ -16,6 +16,7 @@ export class SomeProductsComponent implements OnInit {
   @ViewChild('owlElement') owlElement: any;
 
   allProducts: Products[] = [];
+  allProducts_v2: Products[] = [];
 
   customOptions: OwlOptions = {
     loop: true,
@@ -39,12 +40,22 @@ export class SomeProductsComponent implements OnInit {
   isLoding: boolean = false;
   ngOnInit(): void {
     this.displayAllProducts();
+    this.displayAllProducts_v2();
   }
 
   displayAllProducts(): void {
     this._productsDataService.allProducts().subscribe({
       next: (response) => {
         this.allProducts = response.data.slice(0, 12);
+        this.getOffer(this.allProducts);
+      },
+    });
+  }
+
+    displayAllProducts_v2(): void {
+    this._productsDataService.allProducts_v2().subscribe({
+      next: (response) => {
+        this.allProducts_v2 = response.data.slice(0, 12);
         this.getOffer(this.allProducts);
       },
     });

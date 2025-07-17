@@ -1,48 +1,32 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
   <div class="container">
     <a class="navbar-brand">
-      <img src="./assets/images/freshcart-logo.svg" alt="" />
+      <img src="./assets/images/freshcart-logo.svg" alt="FreshCart Logo" class="img-fluid" style="height: 40px;" />
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopContent">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul
-        class="alt-icons d-flex flex-row navbar-nav ms-auto mb-2 mb-lg-0 align-items-center justify-content-center py-3"
-      >
-        <li *ngFor="let icon of allIcons" class="px-1 nav-item">
-          <a class="nav-link px-1 fa-xl" aria-current="page"
-            ><i [class]="icon"></i
-          ></a>
+    <div class="collapse navbar-collapse" id="navbarTopContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+        <!-- Social Icons -->
+        <li *ngFor="let icon of allIcons" class="nav-item px-2">
+          <a class="nav-link text-secondary"><i [class]="icon"></i></a>
         </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item p-2">
-          <a
-            class="nav-link px-1 text-capitalize"
-            aria-current="page"
-            routerLinkActive="active-link "
-            routerLink="login"
-            >login</a
-          >
+        
+        <!-- Prescription Button -->
+        <li class="nav-item px-2">
+          <button class="btn btn-success" style="background-color: #28A745;" routerLink="prescription">
+            <i class="fas fa-prescription me-1"></i> Prescription
+          </button>
         </li>
-        <li class="nav-item p-2">
-          <a
-            class="nav-link px-1 text-capitalize"
-            aria-current="page"
-            routerLinkActive="active-link "
-            routerLink="register"
-            >register</a
-          >
+
+        <!-- Auth Links -->
+        <li class="nav-item px-2">
+          <a class="nav-link text-dark fw-medium" routerLinkActive="active" routerLink="login">Login</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link text-dark fw-medium" routerLinkActive="active" routerLink="register">Register</a>
         </li>
       </ul>
     </div>

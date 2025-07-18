@@ -1,4 +1,18 @@
-<div class="health-slider-section my-5">
+<div class="health-slider-section my-1">
+  <!-- Text Slider Banner -->
+<div class="text-slider-banner bg-white py-2 mb-4 shadow-sm">
+  <div class="container">
+    <owl-carousel-o [options]="textSliderOptions">
+      <ng-template *ngFor="let category of categories" carouselSlide>
+        <div class="category-slide">
+          <span class="category-badge bg-light text-dark px-3 py-2 rounded-pill fw-bold">
+            {{category}}
+          </span>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>
   <div class="container">
     <div class="row g-3">
       <!-- Main Carousel Column -->
@@ -7,7 +21,7 @@
           <owl-carousel-o [options]="customOptions">
             <!-- Prescription Health Banner Slide -->
             <ng-template carouselSlide>
-              <div class="prescription-banner h-100 d-flex align-items-center p-5">
+              <div class="prescription-banner h-280 d-flex align-items-center p-5">
                 <div class="banner-content text-white">
                   <h2 class="display-5 fw-bold mb-3">Your Prescription for<br>Affordable Health<br>Solutions!</h2>
                   <p class="mb-4">Elevate your health journey with exclusive discounts and unparalleled
@@ -22,13 +36,13 @@
 
             <!-- Product Slides -->
             <ng-template carouselSlide>
-              <img class="w-100 rounded-3" [src]="'./assets/images/main-slider-2.jpeg'" alt="Health Products" height="400">
+              <img class="w-100 rounded-3" [src]="'./assets/images/main-slider-2.jpg'" alt="Health Products" height="400">
             </ng-template>
             <ng-template carouselSlide>
-              <img class="w-100 rounded-3" [src]="'./assets/images/main-slider-1.jpeg'" alt="Health Products" height="400">
+              <img class="w-100 rounded-3" [src]="'./assets/images/main-slider-1.jpg'" alt="Health Products" height="400">
             </ng-template>
             <ng-template carouselSlide>
-              <img class="w-100 rounded-3" [src]="'./assets/images/main-slider-3.jpeg'" alt="Health Products" height="400">
+              <img class="w-100 rounded-3" [src]="'./assets/images/main-slider-3.jpg'" alt="Health Products" height="400">
             </ng-template>
           </owl-carousel-o>
         </div>
@@ -37,7 +51,7 @@
       <!-- Side Images Column -->
       <div @slidRight class="col-lg-4 d-none d-lg-flex flex-column">
         <div class="health-side-card mb-3 rounded-3 overflow-hidden position-relative">
-          <img class="w-100" [src]="'./assets/images/slide-1.jpeg'" alt="Health Offer" height="200">
+          <img class="w-100" [src]="'./assets/images/main-slider-1.jpg'" alt="Health Offer" height="200">
           <div class="side-card-overlay d-flex align-items-center p-4">
             <div>
               <h3 class="text-white fw-bold">Special Offers</h3>
@@ -48,7 +62,7 @@
         </div>
 
         <div class="health-side-card rounded-3 overflow-hidden position-relative">
-          <img class="w-100" [src]="'./assets/images/main-slider-3.jpeg'" alt="Health Offer" height="200">
+          <img class="w-100" [src]="'./assets/images/main-slider-4.jpeg'" alt="Health Offer" height="200">
           <div class="side-card-overlay d-flex align-items-center p-4">
             <div>
               <h3 class="text-white fw-bold">New Arrivals</h3>

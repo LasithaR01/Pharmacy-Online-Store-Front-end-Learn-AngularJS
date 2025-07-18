@@ -12,6 +12,7 @@ import {
   animations: [cartSlideLeft, cartSlideRight],
 })
 export class MainSliderComponent {
+  // Main banner carousel options
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -48,6 +49,52 @@ export class MainSliderComponent {
     animateOut: 'fadeOut',
     smartSpeed: 1000
   };
+
+  // Text slider options for health categories
+  textSliderOptions: OwlOptions = {
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    nav: false,
+    responsive: {
+      0: {
+        items: 2,
+        margin: 10
+      },
+      576: {
+        items: 3,
+        margin: 15
+      },
+      768: {
+        items: 4,
+        margin: 20
+      },
+      992: {
+        items: 5,
+        margin: 25
+      }
+    },
+    smartSpeed: 500
+  };
+
+  // Health categories data
+  categories = [
+    'Pain Relief',
+    'Cold and Flu',
+    'Diabetes Care',
+    'Digestive Health',
+    'First Aid',
+    'Skin Care',
+    'Child and Baby Care',
+    'Heart Health',
+    'Eye and Ear Care',
+    'Respiratory Health'
+  ];
 
   // Optional: Track current slide for custom indicators
   activeSlides: any;

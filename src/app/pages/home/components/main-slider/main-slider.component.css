@@ -9,15 +9,60 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Prescription Banner */
-.prescription-banner {
-  background: linear-gradient(135deg, #28A745 0%, #218838 100%);
-  border-radius: 16px;
-  height: 400px;
+/* Text Slider Banner */
+.text-slider-banner {
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.category-slide {
+  display: flex;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+.category-badge {
+  display: inline-block;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.category-badge:hover {
+  background: var( --bs-success) !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Owl Carousel Customizations */
+::ng-deep .text-slider-banner .owl-stage {
+  display: flex;
+  align-items: center;
+}
+
+::ng-deep .text-slider-banner .owl-item {
+  display: flex;
+  justify-content: center;
+}
+
+/* Prescription Banner */
+.prescription-banner {
+  background:
+    url('/assets/images/prescription-banner.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Content Styles */
 .banner-content {
   max-width: 80%;
+  text-align: right; /* Align text to the right */
+  margin-left: auto; /* Push content to the right */
 }
 
 .banner-content h2 {
@@ -28,6 +73,8 @@
 .banner-content p {
   font-size: 1.1rem;
   line-height: 1.6;
+  margin-left: auto; /* Align paragraph to the right */
+  max-width: 100%; /* Or set a specific width if needed */
 }
 
 .btn-light {
@@ -77,13 +124,63 @@
   .prescription-banner {
     height: 350px;
     padding: 2rem !important;
+    justify-content: center; /* Center content on smaller screens */
+    text-align: center; /* Center text alignment */
+    background-position: top center; /* Adjust background position if needed */
   }
 
   .banner-content {
     max-width: 100%;
+    text-align: center; /* Center text on mobile */
+    margin-left: 0; /* Reset right alignment */
+    padding: 0 1rem; /* Add some side padding */
   }
 
   .banner-content h2 {
     font-size: 2rem;
+    text-align: center; /* Ensure heading is centered */
+  }
+
+  .banner-content p {
+    text-align: center; /* Center paragraph text */
+    margin-left: 0; /* Reset right alignment */
+  }
+
+  .banner-content button {
+    margin-left: auto;
+    margin-right: auto; /* Center button */
+  }
+}
+
+/* Additional mobile-specific adjustments */
+@media (max-width: 768px) {
+  .prescription-banner {
+    height: 300px;
+    padding: 1.5rem !important;
+  }
+
+  .banner-content h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .banner-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .prescription-banner {
+    height: 280px;
+  }
+
+  .banner-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .banner-content button {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
